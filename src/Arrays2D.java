@@ -19,6 +19,7 @@ public class Arrays2D {
         }
         printGrid();
         System.out.println(avgNumber());
+        System.out.println(bigNum());
     }
 
     public void printGrid(){
@@ -51,11 +52,11 @@ public class Arrays2D {
         int biggest = 0;
         for (int r = 0; r < grid.length; r++) {
             for (int c = 0; c < grid[r].length; c++) {
-                if(grid[r][c]>(grid[r][c]-1)){
-                    grid[r][c] = biggest;
-                    biggest+=grid[r][c];
+                if(grid[r][c]>(biggest)){
+                    biggest = grid[r][c];
                 }
             }
         }
+        return biggest;
     }
 }
